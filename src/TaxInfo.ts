@@ -63,7 +63,7 @@ let ssTax = taxableIncome * .062
 return parseFloat((ssTax + medicareTaxes).toFixed(2)); 
    
 }
-export function calculateTotalTax(grossIncome: number, filingStatus: 'single' | 'married', credits: number, retirementContribution : number): TaxOutput {
+export function calculateTotalTax(grossIncome: number, filingStatus: 'single' | 'married' , credits: number, retirementContribution : number): TaxOutput {
     const deductions = StandardDeductions[filingStatus];
     const taxableIncomeAfterRetirement= grossIncome -retirementContribution
     const taxableIncome = calculateTaxableIncome(taxableIncomeAfterRetirement, deductions);
